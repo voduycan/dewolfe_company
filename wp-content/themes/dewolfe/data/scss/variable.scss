@@ -4,6 +4,9 @@ $bg-blue: #3164CA;
 $bg-blue-light: #E9F4FB;
 $bg-body: #e5e5e5;
 $bg-black: #333;
+$bg-gray: #434343;
+$bg-violet: #0D2645;
+$bg-section: #F8F8F8;
 
 //Color
 $color-white: #fff;
@@ -11,12 +14,14 @@ $color-active: gray;
 $color-black: #333;
 $color-navy: #0D2645;
 $color-black-light: #262626; 
-$color-gray: #D4D4D4;
+$color-gray: #A1A1A1;
 $color-blue: #3164CA;
-
 
 //Border
 $border-header: #F3F3F3;
+
+//Shadow
+$shadow: #ececec;
 
 //Button hover
 $light-hover:#262626;
@@ -28,7 +33,7 @@ $size-h1: 40px;
 $size-h2: 34px;
 $size-h3: 28px;
 $size-h4: 24px;
-$size-h5: 20px;
+$size-h5: 18px;
 $size-p: 13px;
 
 //padding
@@ -46,6 +51,7 @@ $poppins: 'Poppins', sans-serif;
 
 
 //font-weight
+$extraLight: 200;
 $light: 300;
 $regular: 400;
 $medium: 500;

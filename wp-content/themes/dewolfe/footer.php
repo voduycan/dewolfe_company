@@ -18,10 +18,8 @@
         if($group):
     ?>
 	<div class="row">
-		<div class="col-12 col-sm-12 col-md-3 footer-logo">
+		<div class="col-12 col-sm-12 col-md-3 footer-logo d-flex">
 			<a href="<?php bloginfo('url'); ?>"><img src="<?php the_field('logo_footer', 'options');?>"></a>
-			<a class="email" href="mailto:edu@dewolfe.io"><?php echo $group['email']; ?></a>
-			
 		</div>
 		<div class="col-12 col-sm-12 col-md-6 menu d-flex">
 			<ul>
@@ -38,28 +36,35 @@
 	                        </li>';
 	                }
              	?>
+             	<li class="nav-item"> 
+                    <a href="">About</a> 
+                </li>
 			</ul>
 			
 		</div>
 		<?php
-			if(($group['facebook'])||($group['twitter'])||($group['instagram'])): 
+			if(($group['facebook'])||($group['email'])||($group['copy_right'])): 
 		?>
 		<div class="col-12 col-sm-12 col-md-3 social d-flex">
-			<?php if($group['facebook']): ?>
-				<a target="_blank" href="<?php echo $group['facebook']; ?>"><span class="icon-facebook"></span></a>
-			<?php endif; ?>
-			<?php if($group['twitter']): ?>
-				<a target="_blank" href="<?php echo $group['twitter']; ?>"><span class="icon-twitter"></span></a>
-			<?php endif; ?>
-			<?php if($group['instagram']): ?>
-				<a target="_blank" href="<?php echo $group['instagram']; ?>"><span class="icon-instagram"></span></a>
-			<?php endif; ?>
+			<ul>
+				<?php if($group['copy_right']): ?>
+					<li class="copy-right"><?php echo $group['copy_right']; ?></li>
+				<?php endif; ?>
+				<?php if($group['facebook']): ?>
+					<li>
+						<a target="_blank" href="<?php echo $group['facebook']; ?>"><span class="icon-facebook"></span></a>
+						<span><?php echo $group['facebook_name']; ?></span>
+					</li>
+				<?php endif; ?>
+				<?php if($group['email']): ?>
+					<li>
+						<a href="mailto:<?php echo $group['email']; ?>"><span class="icon-mail"></span></a>
+						<span><?php echo $group['email']; ?></span>
+					</li>
+				<?php endif; ?>
+			</ul>
 		</div>
 		<?php endif; ?>
-		<div class="col-12 col-sm-12 col-md-12 copy-right">
-			<p><?php echo $group['copy_right']; ?></p>
-		</div>
-
 	</div>
 <?php endif; ?>
 </footer>

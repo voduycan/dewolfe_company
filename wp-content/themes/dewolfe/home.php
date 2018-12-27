@@ -22,8 +22,12 @@
                 <div class="carousel-item" id="no-<?php echo($n); ?>" style="background-image: url('<?php echo $image; ?>')">
                 </div>
             <?php endwhile; ?>
+            <div class="over-lay"></div>
         </div>
     <?php endif; ?>
+    <div class="adoption d-flex">
+        <p><strong>DeWolfe Group</strong> is a blockchain technology firm dedicated to bringing cutting-edge tech to widespread adoption.</p>
+    </div>
    
     <?php $group = get_field('group_s1'); 
         if($group):
@@ -35,19 +39,19 @@
                 <?php the_field('text_s1', $post->ID); ?>
                 <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['button']; ?></button>
             </div>
-            <ol class="carousel-indicators">
+        </div>
+        <ol class="carousel-indicators">
             <?php if($n > 1): ?>
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <?php for ($i=1; $i < $n; $i++): ?> 
-                        <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
-                    <?php endfor; ?>
-                <?php endif; ?>
-            </ol>   
-        </div>
+                <?php for ($i=1; $i < $n; $i++): ?> 
+                    <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
+                <?php endfor; ?>
+            <?php endif; ?>
+        </ol>
     <?php endif; ?>
 
     
-    <?php if($n > 1): ?>
+   <!--  <?php if($n > 1): ?>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -56,128 +60,213 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    <?php endif; ?>
+    <?php endif; ?> -->
     
 </section>
 <!-- End Top panel -->
 
-<!-- Our client -->
-<section class="our-client">
-    <h2><?php the_field('taught_s2', $post->ID); ?></h2>
-    <?php if( have_rows('taught_logo_s2')): ?>
-        <?php while( have_rows('taught_logo_s2')): the_row();
-            // vars
-            $logo = get_sub_field('logo');
-        ?>
-        <img class="taught" src="<?php echo($logo); ?>" alt="">
-        <?php endwhile; ?>
-    <?php endif; ?>
-
-    <h2><?php the_field('client_s2', $post->ID); ?></h2>
-
-    <?php if( have_rows('client_logo_s2')): ?>
-        <?php while( have_rows('client_logo_s2')): the_row();
-            // vars
-            $logo = get_sub_field('logo');
-        ?>
-        <img class="client" src="<?php echo($logo); ?>" alt="">
-        <?php endwhile; ?>
-    <?php endif; ?>
-
+<!-- partners -->
+<section class="partners">
+    <p>alliances</p>
+    <img  src="<?php bloginfo('template_url'); ?>/data/image/png/forbes.png" alt="">
+    <img  src="<?php bloginfo('template_url'); ?>/data/image/png/havard.png" alt="">
+    <img  src="<?php bloginfo('template_url'); ?>/data/image/png/massa.png" alt="">
+    <img  src="<?php bloginfo('template_url'); ?>/data/image/png/technet.png" alt="">
+    <img  src="<?php bloginfo('template_url'); ?>/data/image/png/huyndai.png" alt="">   
 </section>
-<!-- End Our client -->
+<!-- End partners -->
 
-<!-- Our Camp -->
-<section class="our-camp">
-    <div class="title">
-        <h2><?php the_field('title_s3', $post->ID); ?></h2>
-        <p><?php the_field('text_s3', $post->ID); ?></p>
-    </div>
-    <?php if( have_rows('card_s3')): ?>
-        <div class="card-deck">
-            <?php while( have_rows('card_s3')): the_row();
-                // vars
-                $title = get_sub_field('title');
-                $image = get_sub_field('image');
-                $text = get_sub_field('text');
-            ?>
-        
-                <div class="card">
-                    <div class="card-img-top" style="background-image: url('<?php echo($image); ?>">
-                        <div class="background-opacity"></div>
-                        <h2><?php echo($title); ?></h2>
-                    </div>
-
-                    <div class="card-body">
-                        <?php echo($text); ?>
-                    </div>
-                </div>
-            <?php endwhile; ?>
-        </div>
-    <?php endif; ?>
-</section>
-<!-- End Our Camp -->
-
-<!-- Testimonials -->
-<section class="testimonials">
-    <img  class="background" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-elip.png">
-    <h2><?php the_field('title_s4', $post->ID); ?></h2>
-
-    <?php if( have_rows('slide_s4')): ?>
-        <div class="autoplay slider">
-            <?php while( have_rows('slide_s4')): the_row();
-                // vars
-                $avarta = get_sub_field('avarta');
-                $about = get_sub_field('about');
-                $name = get_sub_field('name');
-                $company = get_sub_field('company');
-            ?>
-                <div>
-                    <div class="row">
-                        <div class="col-12 col-sm-5 px-4">
-                            <div class="elip">
-                                <div class="elip-big">
-                                    <div class="elip-small">
-                                        <div class="img-bg" style="background-image: url('<?php echo($avarta); ?>');"></div>
-                                    </div>
-                                </div>
+<!-- Our Products -->
+<section class="our-products">
+    <h2 class="decoration">out products</h2>
+    <div class="autoplay slider">
+        <div>
+            <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <div class="cap">
+                        <div class="logo" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/logo_white.png');"></div>
+                        <div class="content">
+                            <div class="top">
+                                <h3>DeWolfe Joint Venture</h3>
+                                <span>Columbia, SC</span>
                             </div>
-                        </div>
-                        <div class="col-12 offset-sm-1 col-sm-6 cap">
-                            <p><?php echo($about); ?></p>
-                            <h3><?php echo($name); ?></h3>
-                            <span><?php echo($company); ?></span>
+                            <div class="bottom">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                <span class="mb-1">Issuer field</span>
+                                <p class="mb-1">Convexity Properties</p>
+                                <ul>
+                                    <li>$21,000 per token</li>
+                                    <li>$21,000 per token</li>
+                                </ul>
+                                <h5>Coming Soon</h5>
+                                <button class="btn btn-blue">Sign Up With Email</button>
+                            </div>
 
                         </div>
                     </div>
                 </div>
-            <?php endwhile; ?>
-        </div>
-    <?php endif; ?>
-</section>
-<!-- End Testimonials -->
-
-<!-- Journey -->
-<section class="journey" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-jouney.png'), url('<?php the_field('background_big_s5', $post->ID); ?>')">
-
-  <?php $group = get_field('group_s5'); 
-        if($group):
-    ?>
-    <div class="over-lay"></div>
-    <div class="row">
-        <div class="my-col-md-6 text">
-            <h2><?php echo $group['title_s5']; ?></h2>
-            <?php the_field('text_s5', $post->ID); ?>
-            <div class="button">
-                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['apply_button_s5']; ?></button>
-                <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
+                <div class="col-sm-12 col-md-6 offset-md-1">
+                    <div class="img-right" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/test.jpg');"></div>
+                </div>
             </div>
         </div>
-        <div class="my-col-md-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
+        <div>
+            <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <div class="cap">
+                        <div class="logo" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/logo_white.png');"></div>
+                        <div class="content">
+                            <div class="top">
+                                <h3>DeWolfe Joint Venture</h3>
+                                <span>Columbia, SC</span>
+                            </div>
+                            <div class="bottom">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                <span class="mb-1">Issuer field</span>
+                                <p class="mb-1">Convexity Properties</p>
+                                <ul>
+                                    <li>$21,000 per token</li>
+                                    <li>$21,000 per token</li>
+                                </ul>
+                                <h5>Coming Soon</h5>
+                                <button class="btn btn-blue">Sign Up With Email</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 offset-md-1">
+                    <div class="img-right" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/test.jpg');"></div>
+                </div>
+            </div>
         </div>
+        <div>
+            <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <div class="cap">
+                        <div class="logo" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/logo_white.png');"></div>
+                        <div class="content">
+                            <div class="top">
+                                <h3>DeWolfe Joint Venture</h3>
+                                <span>Columbia, SC</span>
+                            </div>
+                            <div class="bottom">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                <span class="mb-1">Issuer field</span>
+                                <p class="mb-1">Convexity Properties</p>
+                                <ul>
+                                    <li>$21,000 per token</li>
+                                    <li>$21,000 per token</li>
+                                </ul>
+                                <h5>Coming Soon</h5>
+                                <button class="btn btn-blue">Sign Up With Email</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 offset-md-1">
+                    <div class="img-right" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/test.jpg');"></div>
+                </div>
+            </div>
+        </div>
+        
+            
     </div>
-  <?php endif; ?>
 </section>
-<!-- End Journey -->
+<!-- End Our Products -->
+
+<!-- Press -->
+<section class="press">
+    <h2 class="decoration">press</h2>
+    <div class="autoplay slider">
+        <div>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/technet.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/forbes.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/huyndai.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/technet.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/forbes.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/huyndai.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/technet.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/forbes.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-top d-flex">
+                        <img src="<?php bloginfo('template_url'); ?>/data/image/png/huyndai.png">
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Press -->
 <?php  get_footer(); ?>
 
