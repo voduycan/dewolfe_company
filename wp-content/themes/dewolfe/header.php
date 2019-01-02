@@ -80,7 +80,7 @@
 		                }
 	             	?>
                     <li class="nav-item">
-                        <button class="btn btn-blue">Sign Up</button>
+                        <button class="btn btn-blue"><?php the_field('sign_up_button', 'options'); ?></button>
                     </li>
 				</ul>
 			</div>
