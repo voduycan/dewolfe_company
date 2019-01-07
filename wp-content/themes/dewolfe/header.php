@@ -39,7 +39,8 @@
 <!-- Slick -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/data/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/data/slick/slick-theme.css">
-
+<!-- Aos -->
+<link href="<?php bloginfo('template_url'); ?>/data/aos/aos.css" rel="stylesheet">
 <!-- Custom Css -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/data/scss/main.css">
 

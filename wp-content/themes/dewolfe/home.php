@@ -74,7 +74,7 @@
                 // vars
                 $image = get_sub_field('image');
         ?>
-            <img  src="<?php echo $image; ?>" alt="">
+            <img  data-aos="fade-up" data-aos-duration="1000"  src="<?php echo $image; ?>" alt="">
         <?php endwhile; endif; ?>
     <?php endwhile; endif; ?>
     
@@ -100,7 +100,7 @@
 
         <div>
             <div class="row">
-                <div class="col-sm-12 col-md-5">
+                <div class="col-sm-12 col-md-5" data-aos="fade-up" data-aos-duration="1000">
                     <div class="cap">
                         <div class="logo" style="background-image: url('<?php echo $logo;?>');"></div>
                         <div class="content">
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 offset-md-1">
+                <div class="col-sm-12 col-md-6 offset-md-1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                     <div class="img-right" style="background-image: url('<?php echo $image; ?>');"></div>
                 </div>
             </div>
@@ -136,6 +136,7 @@
     <div class="autoplay slider">
         <?php if( have_rows('press_s4') ): 
         while( have_rows('press_s4') ): the_row(); 
+            $time = 1;
         ?>
         <div>
             <div class="card-deck">
@@ -145,7 +146,7 @@
                     $image = get_sub_field('image');
                     $text = get_sub_field('text');
                 ?>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo $time*100; $time++; ?>">
                     <div class="card-img-top d-flex">
                         <img src="<?php echo $image; ?>">
                     </div>

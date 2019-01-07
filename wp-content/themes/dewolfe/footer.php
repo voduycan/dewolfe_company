@@ -76,7 +76,11 @@
 <!-- Slick -->
 <script src="<?php bloginfo('template_url'); ?>/data/slick/slick.js" type="text/javascript" charset="utf-8"></script>
 <script src="<?php bloginfo('template_url'); ?>/data/js/slick_slider.js"></script>	
-
+<!-- Aos -->
+<script src="<?php bloginfo('template_url'); ?>/data/aos/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <?php wp_footer(); ?>
 
 </body>
