@@ -133,28 +133,22 @@
 <!-- Press -->
 <section class="press">
     <h2 class="decoration"><?php the_field('title_s4', $post_ID); ?></h2>
-    <div class="autoplay slider">
-        <?php if( have_rows('press_s4') ): 
-        while( have_rows('press_s4') ): the_row(); 
-            $time = 1;
+    <div class="foundation slider">
+        <?php if( have_rows('press_s4_2') ):
+        while( have_rows('press_s4_2') ): the_row(); 
+            //vars
+            $image = get_sub_field('image');
+            $text = get_sub_field('text');
+             $time = 1;
         ?>
         <div>
-            <div class="card-deck">
-                <?php if( have_rows('card') ): 
-                while( have_rows('card') ): the_row(); 
-                    //vars
-                    $image = get_sub_field('image');
-                    $text = get_sub_field('text');
-                ?>
-                <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo $time*100; $time++; ?>">
-                    <div class="card-img-top d-flex">
-                        <img src="<?php echo $image; ?>">
-                    </div>
-                    <div class="card-body">
-                        <?php echo $text; ?>
-                    </div>
+            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo $time*100; $time++; ?>">
+                <div class="card-img-top d-flex">
+                    <img src="<?php echo $image; ?>">
                 </div>
-                <?php endwhile; endif; ?>
+                <div class="card-body">
+                    <?php echo $text; ?>
+                </div>
             </div>
         </div>
         <?php endwhile; endif; ?>

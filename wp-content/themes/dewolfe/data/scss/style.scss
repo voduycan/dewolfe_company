@@ -675,84 +675,85 @@ footer{
     h2{
         font-weight: $extraLight;
     }
-    .card-deck{
-        .card{
-            border: 0;
-            padding: 10px;
+    
+    .card{
+        border: 0;
+        padding: 10px;
+        background-color: $bg-section;
+        .card-img-top{
+            background-color: $bg-white;
+            justify-content: center;
+            align-items: center;
+            height: 152px;
+            margin-bottom: 10px;
+            @include transition(all 0.2s ease-in-out);
+            img{
+                width: 75%;
+                max-width: 200px;
+                height: auto;
+            }
+        }
+        .card-body{
             background-color: $bg-section;
+            p{
+                margin-bottom: 0;
+                text-align: center;
+            }
+            ul{
+                margin-bottom: 0;
+                li{
+                    font-size: $size-p;
+                }
+            }
+        }
+        &:hover{
             .card-img-top{
-                background-color: $bg-white;
-                justify-content: center;
-                align-items: center;
-                height: 152px;
-                margin-bottom: 10px;
-                @include transition(all 0.2s ease-in-out);
-                img{
-                    width: 75%;
-                    max-width: 200px;
-                    height: auto;
-                }
-            }
-            .card-body{
-                background-color: $bg-section;
-                p{
-                    margin-bottom: 0;
-                    text-align: center;
-                }
-                ul{
-                    margin-bottom: 0;
-                    li{
-                        font-size: $size-p;
-                    }
-                }
-            }
-            &:hover{
-                .card-img-top{
-                    box-shadow: 0px 0px 10px 5px $bg-body;
-                }
+                box-shadow: 0px 0px 10px 5px $bg-body;
             }
         }
-        
     }
+        
+    
     .slick-arrow{
-            display: none !important;
+        display: none !important;
+    }
+    
+    .slick-dots{
+        bottom: -50px;
+        @media all and (max-width: 768px){
+            bottom: -30px;
         }
-        .slick-dots{
-            bottom: -50px;
-            @media all and (max-width: 768px){
-                bottom: -30px;
-            }
-        }
-        .slick-dots li{
-            width: 42px;
+    }
+    .slick-dots li{
+        width: 42px;
+        height: 2px;
+        button{
             height: 2px;
-            button{
+            width: 42px;
+            &::before{
+                content: "";
+                background: $bg-gray;
                 height: 2px;
-                width: 42px;
-                &::before{
-                    content: "";
-                    background: $bg-gray;
-                    height: 2px;
-                    width: 42px; 
-                    opacity: 0.5;
-                }               
-            }
-            @media all and (max-width: 768px){
+                width: 42px; 
+                opacity: 0.5;
+            }               
+        }
+        @media all and (max-width: 768px){
+            width: 30px;
+            button{
                 width: 30px;
-                button{
+                &::before{
                     width: 30px;
-                    &::before{
-                        width: 30px;
-                    }
                 }
             }
         }
-        .slick-dots li.slick-active button{
-            &::before{
-                background: $bg-blue;
-                opacity: 1;
-            }
+    }
+    .slick-dots li.slick-active button{
+        &::before{
+            background: $bg-blue;
+            opacity: 1;
         }
+    }
 
 }
 

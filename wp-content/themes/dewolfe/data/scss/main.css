@@ -837,11 +837,11 @@ footer {
     width: 44px; }
   .press h2 {
     font-weight: 200; }
-  .press .card-deck .card {
+  .press .card {
     border: 0;
     padding: 10px;
     background-color: #F8F8F8; }
-    .press .card-deck .card .card-img-top {
+    .press .card .card-img-top {
       background-color: #fff;
       justify-content: center;
       align-items: center;
@@ -849,20 +849,20 @@ footer {
       margin-bottom: 10px;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
-      .press .card-deck .card .card-img-top img {
+      .press .card .card-img-top img {
         width: 75%;
         max-width: 200px;
         height: auto; }
-    .press .card-deck .card .card-body {
+    .press .card .card-body {
       background-color: #F8F8F8; }
-      .press .card-deck .card .card-body p {
+      .press .card .card-body p {
         margin-bottom: 0;
         text-align: center; }
-      .press .card-deck .card .card-body ul {
+      .press .card .card-body ul {
         margin-bottom: 0; }
-        .press .card-deck .card .card-body ul li {
+        .press .card .card-body ul li {
           font-size: 13px; }
-    .press .card-deck .card:hover .card-img-top {
+    .press .card:hover .card-img-top {
       box-shadow: 0px 0px 10px 5px #e5e5e5; }
   .press .slick-arrow {
     display: none !important; }
