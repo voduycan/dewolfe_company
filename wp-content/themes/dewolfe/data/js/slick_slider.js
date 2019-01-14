@@ -3,14 +3,14 @@ $(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 4000,
+		autoplaySpeed: 444000,
 		dots: true,
 	});
 	$('.foundation').slick({
         slidesToShow: 4,
         slidesToScroll: 4,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 444000,
         dots: true,
         responsive: [
             {
@@ -36,6 +36,13 @@ $(function() {
             }
         ]
     });
+
+    //Scroll
+    $('.cap-scroll').jScrollPane();
+    $( window ).resize(function() {
+        $('.cap-scroll').jScrollPane();
+    });
+    
 	// Set Cookie
 	function setCookie(cname, cvalue, exdays) {
 	    var d = new Date();
@@ -149,9 +156,7 @@ $(function() {
     // if($(document).scrollTop() >= $("header").height()){
     // 	$('header').addClass('to-fixed');
  //    }
- //    $( window ).resize(function() {
-	// 	$('.cap-scroll').jScrollPane();
-	// });
+
  //    $(window).scroll(function(){
 	//     if($(document).scrollTop() >= $("header").height()){
 	//     	$('header').addClass('to-fixed');

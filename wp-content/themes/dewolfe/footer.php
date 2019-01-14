@@ -14,12 +14,13 @@
 
 ?>
 <footer>
-	<?php $group = get_field('group_footer', 'options'); 
-        if($group):
-    ?>
+	
 	<div class="row">
 		<div class="col-12 col-sm-12 col-md-3 footer-logo d-flex">
 			<a href="<?php bloginfo('url'); ?>"><img src="<?php the_field('logo_footer', 'options');?>"></a>
+				<?php if(get_field('email', 'options')): ?>
+					<a class="email" href="mailto:<?php the_field('email', 'options');?>"><span><?php the_field('email', 'options');?></span></a>
+				<?php endif; ?>
 		</div>
 		<div class="col-12 col-sm-12 col-md-6 menu d-flex">
 			<ul>
@@ -42,31 +43,30 @@
 			</ul>
 			
 		</div>
-		<?php
-			if(($group['facebook'])||($group['email'])||($group['copy_right'])): 
-		?>
+		
+		<?php if( have_rows('social', 'options') ): ?>
+
 		<div class="col-12 col-sm-12 col-md-3 social d-flex">
 			<ul>
-				<?php if($group['copy_right']): ?>
-					<li class="copy-right"><?php echo $group['copy_right']; ?></li>
-				<?php endif; ?>
-				<?php if($group['facebook']): ?>
+
+				<?php while( have_rows('social', 'options') ): the_row(); 
+
+					// vars
+					$logo = get_sub_field('logo');
+					$name = get_sub_field('name');
+					$link = get_sub_field('link');
+
+					?>
 					<li>
-						<a target="_blank" href="<?php echo $group['facebook']; ?>"><span class="icon-facebook"></span></a>
-						<span><?php echo $group['facebook_name']; ?></span>
+						<a target="_blank" href="<?php echo $link; ?>"><img src="<?php echo $logo; ?>"><span><?php echo $name; ?></span></a>
+						
 					</li>
-				<?php endif; ?>
-				<?php if($group['email']): ?>
-					<li>
-						<a href="mailto:<?php echo $group['email']; ?>"><span class="icon-mail"></span></a>
-						<span><?php echo $group['email']; ?></span>
-					</li>
-				<?php endif; ?>
+				<?php endwhile; ?>
 			</ul>
 		</div>
 		<?php endif; ?>
+
 	</div>
-<?php endif; ?>
 </footer>
 </div>
 <!-- Boostrap -->
