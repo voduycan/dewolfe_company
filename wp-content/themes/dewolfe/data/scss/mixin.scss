@@ -113,6 +113,42 @@
   &::-webkit-input-placeholder  { font-family:  $font-family; } // Safari and Chrome
   &.placeholder                 { font-family:  $font-family; } // Fallback
 }
+
+//Slick arrow
+@mixin arrow{
+  .slick-arrow{
+        display: none !important;
+    }
+    
+    .slick-dots{
+        bottom: -50px;
+        @media all and (max-width: 768px){
+            bottom: -30px;
+        }
+    }
+    .slick-dots li{
+        width: 27px;
+        height: 2px;
+        button{
+            height: 2px;
+            width: 27px;
+            &::before{
+                content: "";
+                background: $bg-gray;
+                height: 2px;
+                width: 27px; 
+                opacity: 0.5;
+            }               
+        }
+    }
+    .slick-dots li.slick-active button{
+        &::before{
+            background: $bg-blue;
+            opacity: 1;
+        }
+    }
+}
+
 //CSS3 animation to-down
 //----------------------------------
 @keyframes to-down{

@@ -17,10 +17,12 @@
 	
 	<div class="row">
 		<div class="col-12 col-sm-12 col-md-3 footer-logo d-flex">
-			<a href="<?php bloginfo('url'); ?>"><img src="<?php the_field('logo_footer', 'options');?>"></a>
+			<div class="text-center">
+				<a href="<?php bloginfo('url'); ?>"><img src="<?php the_field('logo_footer', 'options');?>"></a>
 				<?php if(get_field('email', 'options')): ?>
 					<a class="email" href="mailto:<?php the_field('email', 'options');?>"><span><?php the_field('email', 'options');?></span></a>
 				<?php endif; ?>
+			</div>
 		</div>
 		<div class="col-12 col-sm-12 col-md-6 menu d-flex">
 			<ul>
@@ -37,9 +39,6 @@
 	                        </li>';
 	                }
              	?>
-             	<li class="nav-item"> 
-                    <a href="">About</a> 
-                </li>
 			</ul>
 			
 		</div>

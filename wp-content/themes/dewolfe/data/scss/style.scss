@@ -19,7 +19,7 @@ h1{
 h2{
     text-transform: uppercase;
     font-size: $size-h2;
-    font-weight: $light;
+    font-weight: $extraLight;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
@@ -75,7 +75,7 @@ p{
 }
 
 section{
-    padding: $padding;
+    padding: 80px $padding;
     @media all and (max-width: 992px){
         padding: $padding-tablet;
     }
@@ -87,6 +87,12 @@ section{
 a:hover{
     text-decoration: none;
 } 
+.title-h5{
+    font-weight: $bold;
+    font-size: $size-h5 - 2;
+    color: $color-blue;
+    text-transform: capitalize;
+}
 // .ha-header-hide {
 //     @include animation(to-top 0.2s ease-in-out);
 // }
@@ -247,8 +253,11 @@ footer{
         padding: 30px $padding-mobile;
     }
     .footer-logo{
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
+        @media all and (max-width: 576px){
+            align-items: center;
+        }
         img{
             width: 87px;
             height: auto;
@@ -258,6 +267,7 @@ footer{
             font-size: $size-p - 1;
             font-weight: $light;
             margin-top: 5px;
+            display: block;
         }
     }
     .menu{
@@ -473,8 +483,11 @@ footer{
                 left: 0;
                 right: 0;
                 bottom: 0;
-                @include opacity(0.3);
+                @include opacity(0.6);
                 z-index: -1;
+            }
+            .caption-scroll{
+                height: 230px;
             }   
             
         }
@@ -487,12 +500,12 @@ footer{
     }
     .over-lay{
         position: absolute;
-        background: #333;
+        background: #1A2542;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        opacity: 0.3;
+        @include opacity(0.56);
     }
     .carousel-indicators{
         position: unset;
@@ -552,7 +565,7 @@ footer{
     background-image: url('../image/png/bg-product-top.png');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 360px auto;
     h2{
         font-weight: $extraLight;
         text-align: center;
@@ -561,7 +574,7 @@ footer{
         .row{
             margin-left: 0;
             margin-right: 0;
-            padding: 15px 25px;
+            padding-bottom: 15px;
             
             .col-sm-12{
                 padding: 0;
@@ -572,6 +585,7 @@ footer{
                 background: $bg-section;
                 height: 406px;
                 padding: 30px;
+                padding-right: 10px;
                 position: relative;
                 @media all and (max-width: 576px){
                     height: auto;
@@ -582,7 +596,7 @@ footer{
                     z-index: 100;
                     left: -25px;
                     bottom: -15px;
-                    width: 57px;
+                    width: 60px;
                     height: auto;
                 }
             }
@@ -606,13 +620,12 @@ footer{
                         top: 50%;
                         left: 0;
                         @include translate(0, -50%);
-                        background: $bg-violet;
                         height: 48px;
                         width: 48px;
                         border-radius: 50%;
-                        background-position: center 6px;
+                        background-position: center center;
                         background-repeat: no-repeat;
-                        background-size: 38px auto;
+                        background-size: cover;
                     }
                     .title{
                         h3{
@@ -626,7 +639,9 @@ footer{
                     }
                 }
                 .bottom{
-                    & > span{
+                    h6{
+                        text-transform: unset;
+                        padding: 0;
                         font-size: $size-p + 2;
                         font-weight: $medium;
                         color: $color-blue-light; 
@@ -694,36 +709,7 @@ footer{
                 }
             }
         }
-        .slick-arrow{
-            display: none !important;
-        }
-        .slick-dots{
-            bottom: -50px;
-            @media all and (max-width: 768px){
-                bottom: -30px;
-            }
-        }
-        .slick-dots li{
-            width: 27px;
-            height: 2px;
-            button{
-                height: 2px;
-                width: 27px;
-                &::before{
-                    content: "";
-                    background: $bg-gray;
-                    height: 2px;
-                    width: 27px; 
-                    opacity: 0.5;
-                }               
-            }
-        }
-        .slick-dots li.slick-active button{
-            &::before{
-                background: $bg-blue;
-                opacity: 1;
-            }
-        }
+        @include arrow;
     }
 }
  
@@ -733,7 +719,7 @@ footer{
     background-image: url('../image/png/bg-product-top.png');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 360px auto;
     h2{
         font-weight: $extraLight;
         text-align: center;
@@ -799,37 +785,230 @@ footer{
     }
         
     
-    .slick-arrow{
-        display: none !important;
-    }
-    
-    .slick-dots{
-        bottom: -50px;
-        @media all and (max-width: 768px){
-            bottom: -30px;
-        }
-    }
-    .slick-dots li{
-        width: 27px;
-        height: 2px;
-        button{
-            height: 2px;
-            width: 27px;
-            &::before{
-                content: "";
-                background: $bg-gray;
-                height: 2px;
-                width: 27px; 
-                opacity: 0.5;
-            }               
-        }
-    }
-    .slick-dots li.slick-active button{
-        &::before{
-            background: $bg-blue;
-            opacity: 1;
-        }
-    }
+   @include arrow;
 
 }
+.why-choose-us{
+    background-image: url('../image/png/bg-product-top2.png'), url('../image/png/bg-product-bottom.png');
+    background-position: top right, left bottom;
+    background-size: 360px auto;
+    background-repeat: no-repeat;
+    background-color: $bg-section;
+    h2{
+        text-align: center;
+    }
+    .left{
+        .image{
+            @media all and (min-width: 768px){
+                margin-left: -30px;
+            }
+        }
+        .box{
+            left: 0;
+        }
+    }
+    .right{
+        .image{
+            @media all and (min-width: 768px){
+                margin-right: -30px;
+            }
+        }
+        .box{
+            right: 0;
+        }
+    }
+    .text{
+        justify-content: center;
+        align-items: center;
+        height: 488px;
+        p{
+            margin-bottom: 0;
+        }
+    }
+    .image{
+        height: 488px;
+        @include background-image;
+        position: relative;
 
+        .box{
+            width: 246px;
+            height: 195px;
+            border-top: 4px solid $bg-blue;
+            position: absolute;
+            bottom: -2px;
+            background: $bg-white;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-color: $bg-section;
+            p{
+                margin-bottom: 0;
+            }
+
+        }
+    }
+    .mb{
+        margin-bottom: 50px;
+    }
+    @media all and (max-width: 576px){
+        .left{
+            .text{
+                margin-bottom: 30px;
+            }
+        }
+        .right{
+            .text{
+                margin-top: 30px;
+            }
+        }
+        .text{
+            height: auto;
+        }
+        .image{
+            height: 350px;
+        }
+    }
+}
+
+.capital{
+    position: relative;
+    .bg-img{
+        position: absolute;
+        width: auto;
+        height: 140px;
+        right: $padding;
+        top: -60px;
+        @media all and (max-width: 992px){
+            right: $padding-tablet;
+            height: 100px;
+            top: -40px;
+        }
+        @media all and (max-width: 576px){
+            right: $padding-mobile;
+            height: 80px;
+            top: -30px;
+        }
+    }
+    .image{
+        height: 404px;
+        @include background-image;
+    }
+    .d-flex{
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+        padding: 20px;
+        h2{
+            margin-bottom: 15px;
+        }
+        h5{
+            font-size: $size-h5;
+            padding: 0;
+            font-weight: $bold;
+            color: $color-blue;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.our-team{
+    background-color: $bg-section;
+    background-image: url('../image/png/bg-product-top2.png');
+    background-position: top right;
+    background-size: 360px auto;
+    background-repeat: no-repeat;
+    position: relative;
+    h2{
+        text-align: center;
+        padding: 0;
+    }
+    .bg-img{
+        position: absolute;
+        width: auto;
+        height: 140px;
+        left: $padding;
+        top: -60px;
+        @media all and (max-width: 992px){
+            left: $padding-tablet;
+            height: 100px;
+            top: -40px;
+        }
+        @media all and (max-width: 576px){
+            left: $padding-mobile;
+            height: 80px;
+            top: -30px;
+        }
+    }
+    .d-flex{
+        height: 475px;
+        justify-content: center;
+        align-items: center;
+        @media all and (max-width: 1024px){
+            height: 380px;
+        }
+        @media all and (max-width: 992px){
+            height: 350px;
+        }
+        @media all and (max-width: 576px){
+            height: auto;
+            .about{
+                margin-bottom: 20px;
+            }
+        }
+        .about{
+            color: $bg-gray;
+            h3{
+                font-weight: $extraLight;
+                margin-bottom: 0;
+            }
+            .work{
+                font-size: $size-p + 2;
+                font-weight: $regular;
+                text-transform: capitalize;
+                color: $color-work;
+            }
+            ul li{
+                font-size: $size-p;
+                margin-left: 18px;
+            }
+        }
+    }
+    .box{
+        position: relative;
+        height: 475px;
+        .image{
+            height: 468px;
+            @include background-image;
+            position: absolute;
+            top: 0;
+            bottom: 7px;
+            left: 0;
+            right: 7px;
+            z-index: $Z-index5;
+        }
+        .bg-blue{
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            right: 0;
+            bottom: 0;
+            background: #2A58AF;
+            z-index: $Z-index1;
+        }
+        @media all and (max-width: 1024px){
+            height: 380px;
+            .image{
+                height: 373px;
+            }
+        }
+        @media all and (max-width: 992px){
+            height: 350px;
+            .image{
+                height: 343px;
+            }
+        }
+    }
+    @include arrow;
+    
+}

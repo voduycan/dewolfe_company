@@ -32,9 +32,11 @@
     <div class="caption" id="caption-home">
         <div class="content">
             <div class="over-lay-caption"></div>
-            <h1><?php the_field('title_s1', $post_ID) ?></h1>
-            <?php the_field('text_s1', $post->ID); ?>
-            <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+            <div class="caption-scroll">
+                <h1><?php the_field('title_s1', $post_ID) ?></h1>
+                <?php the_field('text_s1', $post->ID); ?>
+                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+                </div>
            
             <ol class="carousel-indicators">
                 <?php if($n > 1): ?>
@@ -92,7 +94,7 @@
         <div>
             <div class="row">
 
-                <div class="col-sm-12 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1000">
+                <div class="col-sm-12 col-md-5 offset-md-1  d-flex">
                     <img class="bg-product" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-product.png">
                     <div class="cap  cap-scroll">
                         <div class="top">
@@ -104,8 +106,7 @@
                         </div>
                         <div class="bottom">
                             <?php echo $text; ?>
-                            <span class="mb-1"><?php echo  $issuer_field; ?></span>
-                            <?php echo $sub_text; ?>
+                           
                             <div class="mt-3">
                                 <h5><?php echo $comming; ?></h5>
                                 <button class="btn btn-blue"><?php echo $sign_up_buton; ?></button>
@@ -113,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <div class="col-sm-12 col-md-5">
                     <div class="img-right" style="background-image: url('<?php echo $image; ?>');"></div>
                 </div>
             </div>
@@ -138,7 +139,7 @@
              $time = 1;
         ?>
         <div>
-            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo $time*100; $time++; ?>">
+            <div class="card">
                 <div class="content">
                     <div class="card-img-top d-flex">
                         <img src="<?php echo $image; ?>">
