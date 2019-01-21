@@ -48,7 +48,7 @@
 
 <body <?php body_class(); ?>>
 <div class="container">
-	<header>
+	<header id="header">
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
 				<img class="logo-normal" src="<?php the_field('logo_header', 'options'); ?>">

@@ -52,6 +52,18 @@ $(function() {
         $('.caption-scroll').jScrollPane();
     });
 
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        if (window.pageYOffset >= 0) {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+            document.getElementById("header").style.top = "0";
+            } else {
+            document.getElementById("header").style.top = "-100px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    }
     
 	// Set Cookie
 	function setCookie(cname, cvalue, exdays) {

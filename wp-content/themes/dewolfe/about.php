@@ -71,7 +71,10 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4 offset-md-1">
                     <div class="text d-flex">
-                        <?php echo $text; ?>
+                        <div>
+                            <h5 class="title-h5"><?php echo $title; ?></h5>
+                            <?php echo $text; ?>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-5 offset-md-1">
@@ -101,7 +104,12 @@
                 </div>
                 <div class="col-sm-12 col-md-4 offset-md-1">
                     <div class="text d-flex">
-                        <?php echo $text; ?>
+                       <div>
+                            <h2><?php echo $title; ?></h2>
+                            <div class="pd-left">
+                                <?php echo $text; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,7 +121,6 @@
 
 <!-- Capital -->
 <section class="capital">
-    <img class="bg-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-product.png">
     <div class="row">
         <div class="col-sm-12 col-md-5 offset-md-1">
             <div class="image" style="background-image: url('<?php the_field('image_s3', $post_ID); ?>');"></div>
@@ -130,7 +137,6 @@
 
 <!-- Our Team -->
 <section class="our-team">
-    <img class="bg-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-product.png">
     <h2><?php the_field('title_s4', $post_ID); ?></h2>
     <div class="team slider">
         <?php if( have_rows('card_s4') ): 
@@ -143,20 +149,21 @@
         ?>
         <div>
             <div class="row">
-                <div class="col-sm-12 col-md-4 offset-md-1 d-flex">
-                    <div class="about">
-                       <div class="mb-3">
-                            <h3><?php echo $name; ?></h3>
-                            <span class="work"><?php echo $work; ?></span>
-                       </div>
-                        <?php echo $text; ?>
+
+                <div class="col-sm-12 col-md-5 offset-md-1 p-right">
+                    <div class="d-flex">
+                        <div class="about">
+                            <img class="bg-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-product.png">
+                           <div class="mb-3">
+                                <h3><?php echo $name; ?></h3>
+                                <span class="work"><?php echo $work; ?></span>
+                           </div>
+                            <?php echo $text; ?>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-5 offset-md-1">
-                    <div class="box">
-                        <div class="bg-blue"></div>
-                        <div class="image" style="background-image: url('<?php echo $image; ?>');">
-                        </div>
+                <div class="col-sm-12 col-md-5 p-left">
+                    <div class="image" style="background-image: url('<?php echo $image; ?>');">
                     </div>
                 </div>
             </div>
