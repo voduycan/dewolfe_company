@@ -81,10 +81,29 @@
 		                }
 	             	?>
                     <li class="nav-item">
-                        <button class="btn btn-blue"><?php the_field('sign_up_button', 'options'); ?></button>
+                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button', 'options'); ?></button>
                     </li>
 				</ul>
 			</div>
 		</nav>
 	</header>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle"><?php the_field('title_form', 'options'); ?></h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php the_field('form', 'options'); ?>
+      </div>
+    </div>
+  </div>
+</div>
+
 	

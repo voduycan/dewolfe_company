@@ -379,7 +379,148 @@ footer{
 .slick-initialized.slider-nav{
     width: 80%;
 }
+#exampleModalCenter{
+    .modal-content{
+        position: relative;
+        padding: 50px;
+        background-image: url('../image/png/bottom-right.png');
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: 300px auto;
+        @media all and (max-width: 576px){
+            padding: 0 15px;
+        }
+        button.close{
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            padding: 0;
+            background-color: $bg-blue;
+            right: -20px;
+            top: -20px;
+            border-radius: 50%;
+            margin: 0;
+            font-weight: 200;
+            color: $color-white;
+            text-shadow: none;
+            opacity: 1;
+            &:hover{
+                background-color: $color-navy;
+            }
+            @media all and (max-width: 576px){
+                background: none;
+                color: $color-blue;
+                right: 3px;
+                top: 13px;
+                font-weight: 600;
+                font-size: 30px;
+            }
+        }
+    }
+    .modal-header{
+        border-bottom: none;
+        h2{
+            font-size: $size-h4;
+            text-transform: lowercase;
+            span:first-child{
+                text-transform: capitalize;
+            }
+        }
+    }
+    .modal-body{
+        padding: 0;
+    }
+    .gform_wrapper ul.gform_fields li.gfield{
+        padding-right: 0;
+    }
+    .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error{
+        max-width: 100% !important;
+    }
+    .gfield_label{
+        font-weight: $regular;
+    }
+    .large{
+        border-radius: 0 !important;
+    }
+    .gfield_radio{
+       
+        
+        // input[type="radio"]{
+        //     margin-top: 0;
+        // }
+         // input[type='radio']{
+         //    -webkit-appearance: none;
+         //    -moz-appearance: none;
+         //    appearance: none;
+         // }
+        
+         li {
+            width: auto;
+          display: inline-block;
+          position: relative;
+          padding-left: 10px;
+        }
 
+        li input[type='radio'] {
+          display: none;
+        }
+
+        li label {
+          color: #666;
+          font-weight: normal;
+        }
+
+        li label:before {
+          content: " ";
+          display: inline-block;
+          position: relative;
+          top: 5px;
+          margin: 0 5px 0 0;
+          width: 20px;
+          height: 20px;
+          border-radius: 11px;
+          border: 2px solid #004c97;
+          background-color: transparent;
+        }
+
+        li input[type=radio]:checked + label:after {
+          border-radius: 11px;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          top: 9px;
+          left: 10px;
+          content: " ";
+          display: block;
+          background: #004c97;
+        }
+    }
+    .gform_footer{
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+    input[type="submit"]{
+        padding: 10px 30px;
+        text-transform: capitalize;
+        font-size: $size-p;
+        font-weight: $regular;
+        border-radius: 7px;
+        background: $bg-blue;
+        color: $color-white;
+        margin: 0;
+        @include transition(all 0.2s ease-in-out);
+        &:hover{
+            background: $color-navy;
+        }
+        &:focus{
+            background: $bg-blue;
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+    
+}
 #carouselExampleIndicators{
     padding: 0; 
     padding-top: 50px;

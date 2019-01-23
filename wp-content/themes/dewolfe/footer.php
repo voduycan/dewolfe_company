@@ -68,6 +68,7 @@
 	</div>
 </footer>
 </div>
+
 <!-- Boostrap -->
 
 <script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/popper.min.js"></script>	
