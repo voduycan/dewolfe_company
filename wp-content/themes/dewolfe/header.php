@@ -81,7 +81,7 @@
 		                }
 	             	?>
                     <li class="nav-item">
-                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button', 'options'); ?></button>
+                        <button class="btn btn-blue"><?php the_field('sign_up_button', 'options'); ?></button>
                     </li>
 				</ul>
 			</div>

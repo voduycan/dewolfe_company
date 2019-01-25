@@ -25,9 +25,6 @@
             <div class="over-lay"></div>
         </div>
     <?php endif; ?>
-   <!--  <div class="adoption d-flex">
-        <?php the_field('deception_s1', $post_ID) ?>
-    </div> -->
    
     <div class="caption" id="caption-home">
         <div class="content">
@@ -36,7 +33,7 @@
                 <h1><?php the_field('title_s1', $post_ID) ?></h1>
                 <?php the_field('text_s1', $post->ID); ?>
                 <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
-                </div>
+            </div>
            
             <ol class="carousel-indicators">
                 <?php if($n > 1): ?>

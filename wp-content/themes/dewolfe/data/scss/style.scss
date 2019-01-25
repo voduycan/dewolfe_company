@@ -119,6 +119,7 @@ a:hover{
         border-bottom: 2px solid $bg-blue;
     }
 }
+
 .container{
     position: relative;
     padding: 0;
@@ -139,7 +140,7 @@ header{
     position: fixed;
     top: 0;
     @include transition(all 0.3s ease-in-out);
-    box-shadow: 0 0 10px 2px $bg-body;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.3);
     @media all and (max-width: 992px){
         padding: 0px $padding-tablet;
     }
@@ -257,7 +258,7 @@ footer{
     .footer-logo{
         align-items: flex-start;
         flex-direction: column;
-        @media all and (max-width: 576px){
+        @media all and (max-width: 768px){
             align-items: center;
         }
         img{
@@ -335,7 +336,7 @@ footer{
             }
         }
     }
-    @media all and (max-width: 576px){
+    @media all and (max-width: 768px){
         .footer-logo{
             text-align: center;
             margin-bottom: 10px;
@@ -367,8 +368,6 @@ footer{
     z-index: $Z-index1;
     @include fit-content-height;
     @include fit-content-width;
-    
-    
 }
 .carousel-control-prev-icon{
     background-image: url('../image/svg/left-arrow.svg');
@@ -380,6 +379,14 @@ footer{
     width: 80%;
 }
 #exampleModalCenter{
+    @media (min-width: 992px){
+        .modal-dialog {
+            max-width: 750px;
+        }
+    }
+    @media (max-width: 576px){
+        padding-right: 0 !important;
+    }
     .modal-content{
         position: relative;
         padding: 50px;
@@ -388,7 +395,7 @@ footer{
         background-repeat: no-repeat;
         background-size: 300px auto;
         @media all and (max-width: 576px){
-            padding: 0 15px;
+            padding: 20px 15px;
         }
         button.close{
             position: absolute;
@@ -411,7 +418,7 @@ footer{
                 background: none;
                 color: $color-blue;
                 right: 3px;
-                top: 13px;
+                top: 3px;
                 font-weight: 600;
                 font-size: 30px;
             }
@@ -420,7 +427,7 @@ footer{
     .modal-header{
         border-bottom: none;
         h2{
-            font-size: $size-h4;
+            font-size: $size-h2 - 4;
             text-transform: lowercase;
             span:first-child{
                 text-transform: capitalize;
@@ -436,29 +443,54 @@ footer{
     .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error{
         max-width: 100% !important;
     }
+    .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]){
+        padding: 10px 15px;
+    }
+    .gform_wrapper.gf_browser_chrome select{
+        padding: 2px 15px;
+    }
     .gfield_label{
+        font-size: $size-p + 3;
         font-weight: $regular;
+    }
+    .gform_wrapper .validation_message {
+        display: none;
+    }
+    .gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning{
+        background-color: $bg-white;
+        margin-bottom: 0;
+        border-top: none;
+        border-bottom: none;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gform_wrapper li.gfield_error textarea{
+        border: 1px solid $color-danger;
+    }
+    .gform_wrapper div.validation_error{
+        color: $color-danger;
+        font-size: $size-p + 2;
+        font-weight: $bold;
+        margin-bottom: 25px;
+        border-top: none;
+        border-bottom: none;
+        padding: 0;
+    }
+    .gform_confirmation_message{
+        color: $color-success;
+        font-weight: $bold;
+        text-align: center;
+        font-size: $size-p + 2;
     }
     .large{
         border-radius: 0 !important;
+        font-size: $size-p + 1;
     }
     .gfield_radio{
-       
-        
-        // input[type="radio"]{
-        //     margin-top: 0;
-        // }
-         // input[type='radio']{
-         //    -webkit-appearance: none;
-         //    -moz-appearance: none;
-         //    appearance: none;
-         // }
-        
          li {
             width: auto;
-          display: inline-block;
-          position: relative;
-          padding-left: 10px;
+            display: inline-block;
+            position: relative;
         }
 
         li input[type='radio'] {
@@ -468,31 +500,33 @@ footer{
         li label {
           color: #666;
           font-weight: normal;
+          font-size: $size-p + 1;
+          margin: 0 30px 0 20px;
         }
 
         li label:before {
-          content: " ";
-          display: inline-block;
-          position: relative;
-          top: 5px;
-          margin: 0 5px 0 0;
-          width: 20px;
-          height: 20px;
-          border-radius: 11px;
-          border: 2px solid #004c97;
-          background-color: transparent;
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid $color-text-blue;
+            background-color: transparent;
+            left: 0;
         }
 
         li input[type=radio]:checked + label:after {
-          border-radius: 11px;
-          width: 12px;
-          height: 12px;
-          position: absolute;
-          top: 9px;
-          left: 10px;
-          content: " ";
-          display: block;
-          background: #004c97;
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            top: 8px;
+            left: 4px;
+            content: " ";
+            display: block;
+            background: $color-text-blue;
         }
     }
     .gform_footer{
@@ -519,45 +553,10 @@ footer{
             box-shadow: none;
         }
     }
-    
 }
 #carouselExampleIndicators{
     padding: 0; 
     padding-top: 50px;
-    // .adoption{
-    //     width: 100%;
-    //     height: 147px;
-    //     background-color: $bg-blue;
-    //     color: $color-white;
-    //     justify-content: center;
-    //     align-items: center;
-    //     background-image: url('../image/png/bg-left.png'), url('../image/png/bg-right.png');
-    //     background-position: left top, right top;
-    //     background-repeat: no-repeat;
-    //     background-size: auto;
-    //     padding: 0 $padding;
-    //     @media all and (max-width: 992px){
-    //         padding: 0 $padding-tablet;
-    //     }
-    //     @media all and (max-width: 576px){
-    //         padding: 0 $padding-mobile;
-    //     }
-    //     p{
-    //         width: 80%;
-    //         margin: 0 auto;
-    //         font-size: $size-normal;
-    //         text-align: center;
-    //         @media all and (min-width: 1366px){
-    //             width: 60%;
-    //         }
-    //         @media all and (max-width: 768px){
-    //             width: 100%;
-    //         }
-    //         @media all and (max-width: 576px){
-    //             font-size: $size-normal - 3;
-    //         }
-    //     }
-    // }
     .caption{
         text-align: left;
         position: absolute;
@@ -677,7 +676,6 @@ footer{
                 margin-right: 0;
             }
         }
-
     }
 }
 
@@ -741,6 +739,9 @@ footer{
                     bottom: -15px;
                     width: 60px;
                     height: auto;
+                     @media all and (max-width: 768px){
+                        display: none;
+                    }
                 }
             }
             .cap{
@@ -792,31 +793,26 @@ footer{
                         margin-top: 15px;
                     }
                     ul {
-                        display: inline-block;
                         margin: 0;
                         li{
                             font-size: $size-p;
                             font-weight: $regular;
-                            padding-left: 15px;
-                            display: inline-block;
-                            position: relative;
-                            margin-right: 15px;
-                            &::before{
-                                content: "";
-                                position: absolute;
-                                background: url('../image/svg/dot.svg');
-                                @include background-image;
-                                width: 5px;
-                                height: 5px;
-                                left: 0;
-                                top: 50%;
-                                @include translateY(-50%);
-                            }
+                            margin-left: 18px;
+                            // &::before{
+                            //     content: "";
+                            //     position: absolute;
+                            //     background: url('../image/svg/dot.svg');
+                            //     @include background-image;
+                            //     width: 5px;
+                            //     height: 5px;
+                            //     left: 0;
+                            //     top: 50%;
+                            //     @include translateY(-50%);
+                            // }
                         }
                     }
                     p{
                         margin-bottom: 4px;
-                        display: inline-block;
                         margin-right: 15px;
                         &:first-child{
                             margin-right: 0;
@@ -990,7 +986,7 @@ footer{
         .pd-left{
             position: relative;
             padding-left: 50px;
-            @media all and (max-width: 576px){
+            @media all and (max-width: 768px){
                 padding-left: 0;
             }
             &::before{
@@ -1009,7 +1005,7 @@ footer{
                     left: -200px;
                     top: 5px;
                 }
-                @media all and (max-width: 576px){
+                @media all and (max-width: 768px){
                     display: none;
                 }
             }
@@ -1040,7 +1036,7 @@ footer{
     .mb{
         margin-bottom: 50px;
     }
-    @media all and (max-width: 576px){
+    @media all and (max-width: 768px){
         .left{
             .text{
                 margin-bottom: 30px;
@@ -1141,7 +1137,7 @@ footer{
             height: 135px;
             left: -35px;
             bottom: -30px;
-            @media all and (max-width: 576px){
+            @media all and (max-width: 768px){
                 display: none;
             }
         }
