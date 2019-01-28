@@ -88,36 +88,32 @@ $(function() {
         return "";
     }
     if(getCookie('userIP')){
-        if(!$('#submit').hasClass('d-none')){
-            $('#submit').addClass('d-none');
-            $('#close').removeClass('d-none');
+        if(!$('#gform_submit_button_1').hasClass('d-none')){
+            $('#gform_submit_button_1').addClass('d-none');
         }
         var interval_obj = setInterval(function() {
             if (!getCookie('userIP')) {
-                $('#submit').removeClass('d-none');
-                $('#close').addClass('d-none');
+                $('#gform_submit_button_1').removeClass('d-none');
                 clearInterval(interval_obj);
             }
         }, 5 * 1000);
     }
-    document.addEventListener( 'wpcf7mailsent', function( event ) {
+    jQuery(document).on('gform_confirmation_loaded', function(){
         if(!getCookie('userIP')){
             setCookie('userIP', 'submit', 3);
         }
         if(getCookie('userIP')){
-            if(!$('#submit').hasClass('d-none')){
-                $('#submit').addClass('d-none');
-                $('#close').removeClass('d-none');
+            if(!$('#gform_submit_button_1').hasClass('d-none')){
+                $('#gform_submit_button_1').addClass('d-none');
             }
             var interval_obj2 = setInterval(function() {
                 if (!getCookie('userIP')) {
-                    $('#submit').removeClass('d-none');
-                    $('#close').addClass('d-none');
+                    $('#gform_submit_button_1').removeClass('d-none');
                     clearInterval(interval_obj2);
                 }
             }, 5 * 1000);
         }
-    }, false );
+    });
     $(document).ready(function (){
         $('h1').wordBreakKeepAll();
         $('h2').wordBreakKeepAll();
@@ -172,10 +168,7 @@ $(function() {
                 $(this).children('.icon-btn').addClass('icon-bottom');
             }
             
-            
         });
-        document.addEventListener( 'wpcf7submit', function( event ) {
-            setTimeout(function() {$('.wpcf7-response-output').fadeOut('1000','linear',true)}, 5 * 1000);
-        }, false );
+       
     });
 });

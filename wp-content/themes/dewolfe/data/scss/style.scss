@@ -606,7 +606,7 @@ footer{
                 }
             }
             p{
-                width: 70%;
+                width: 90%;
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -638,7 +638,7 @@ footer{
     .carousel-item{
         @include background-image;
         width: 100%;
-        height: 586px;
+        height: 486px;
     }
     .over-lay{
         position: absolute;
@@ -703,10 +703,12 @@ footer{
 
 //Our Products
 .our-products{
-    background-image: url('../image/png/bg-product-top.png');
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: 360px auto;
+    @media all and (min-width: 768px){
+        background-image: url('../image/png/bg-product-top.png');
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 360px auto;
+    }
     h2{
         font-weight: $extraLight;
         text-align: center;
@@ -855,10 +857,12 @@ footer{
 // Press
 .press{
     background-color: $bg-section;
-    background-image: url('../image/png/bg-product-top.png');
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: 360px auto;
+    @media all and (min-width: 768px){
+        background-image: url('../image/png/bg-product-top.png');
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 360px auto;
+    }
     h2{
         font-weight: $extraLight;
         text-align: center;
@@ -928,10 +932,12 @@ footer{
 
 }
 .why-choose-us{
-    background-image: url('../image/png/bg-product-top2.png'), url('../image/png/bg-product-bottom.png');
-    background-position: top right, left bottom;
-    background-size: 360px auto;
-    background-repeat: no-repeat;
+    @media all and (min-width: 576px){
+        background-image: url('../image/png/bg-product-top2.png'), url('../image/png/bg-product-bottom.png');
+        background-position: top right, left bottom;
+        background-size: 360px auto;
+        background-repeat: no-repeat;
+    }
     background-color: $bg-section;
     h2{
         text-align: center;
@@ -1015,6 +1021,9 @@ footer{
         height: 488px;
         @include background-image;
         position: relative;
+         @media all and (max-width: 576px){
+            margin-bottom: 100px;
+        }
 
         .box{
             width: 246px;
@@ -1030,37 +1039,59 @@ footer{
             p{
                 margin-bottom: 0;
             }
-
+            @media all and (max-width: 576px){
+                bottom: -100px;
+            }
         }
     }
     .mb{
-        margin-bottom: 50px;
+        margin-bottom: 100px;
+        &:last-child{
+            margin-bottom: 0px !important;
+        }
+        @media all and (max-width: 576px){
+           margin-bottom: 50px;
+        }
     }
     @media all and (max-width: 768px){
-        .left{
-            .text{
-                margin-bottom: 30px;
-            }
-        }
-        .right{
-            .text{
-                margin-top: 30px;
-            }
-        }
         .text{
-            height: auto;
+            height: 350px;
         }
         .image{
             height: 350px;
         }
     }
+    @media all and (max-width: 767px){
+        .left{
+            .text{
+                margin-bottom: 30px;
+            }
+        }
+        .text{
+            height: auto;
+        }
+        .right{
+            .text{
+                margin-bottom: 30px;
+                h2{
+                   font-size: $size-h5 - 3;
+                   font-weight: $bold;
+                }
+            }
+            .row{
+                flex-direction: column-reverse;
+            }
+        }
+    }
 }
 
 .capital{
-    background-image: url('../image/png/bg-product-top2.png');
-    background-position: top right;
-    background-size: 360px auto;
-    background-repeat: no-repeat;
+     @media all and (min-width: 768px){
+        background-image: url('../image/png/bg-product-top2.png');
+        background-position: top right;
+        background-size: 360px auto;
+        background-repeat: no-repeat;
+    }
     position: relative;
     .image{
         height: 404px;
@@ -1071,7 +1102,7 @@ footer{
         align-items: center;
     }
     .box{
-        padding: 20px;
+        padding: 0 20px;
         h2{
             margin-bottom: 15px;
         }

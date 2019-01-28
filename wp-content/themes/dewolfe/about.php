@@ -78,8 +78,8 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-5 offset-md-1">
-                    <div class="image" style="background-image: url('<?php echo $image; ?>');">
-                        <div class="box d-flex">
+                    <div class="image" data-aos="fade-up" data-aos-duration="1000" style="background-image: url('<?php echo $image; ?>');">
+                        <div class="box d-flex" data-aos="fade-up" data-aos-duration="1000">
                             <div>
                                 <h5 class="title-h5"><?php echo $title; ?></h5>
                                 <?php echo $sub_text; ?>
@@ -93,8 +93,8 @@
         <div class="right mb">
             <div class="row">
                 <div class="col-sm-12 col-md-5 offset-md-1">
-                    <div class="image" style="background-image: url('<?php echo $image; ?>');">
-                        <div class="box d-flex">
+                    <div class="image" data-aos="fade-up" data-aos-duration="1000"  style="background-image: url('<?php echo $image; ?>');">
+                        <div class="box d-flex" data-aos="fade-up" data-aos-duration="1000">
                             <div>
                                 <h5 class="title-h5"><?php echo $title; ?></h5>
                                 <?php echo $sub_text; ?>
