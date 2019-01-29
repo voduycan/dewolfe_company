@@ -126,8 +126,8 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?ytwrfx");
-  src: url("../fonts/icomoon.eot?ytwrfx#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?ytwrfx") format("truetype"), url("../fonts/icomoon.woff?ytwrfx") format("woff"), url("../fonts/icomoon.svg?ytwrfx#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?8gumx2");
+  src: url("../fonts/icomoon.eot?8gumx2#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?8gumx2") format("truetype"), url("../fonts/icomoon.woff?8gumx2") format("woff"), url("../fonts/icomoon.svg?8gumx2#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -143,8 +143,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-cancel:before {
+  content: "\e904"; }
+
 .icon-mail:before {
-  content: "\e900"; }
+  content: "\e900";
+  color: #fff; }
 
 .icon-success:before {
   content: "\e901"; }
@@ -157,5 +161,8 @@
 
 .icon-facebook:before {
   content: "\ea90"; }
+
+.icon-cross:before {
+  content: "\ea0f"; }
 
 /*# sourceMappingURL=font.css.map */

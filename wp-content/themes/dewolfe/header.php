@@ -53,8 +53,9 @@
 			<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
 				<img class="logo-normal" src="<?php the_field('logo_header', 'options'); ?>">
 			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<button  id="btn-toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<img src="<?php bloginfo('template_url'); ?>/data/image/svg/menu.svg">
+                <span class="icon-cancel d-none"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -74,14 +75,14 @@
 		                    foreach ( $navItem->classes as $a ) {
 		                        $sss .= " ".$a;
 		                    }
-		                  echo '<li class="nav-item '.$sss.'"> 
+		                  echo '<li class="nav-item menu '.$sss.'"> 
 		                            <a class="nav-link" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a> 
 
 		                        </li>';
 		                }
 	             	?>
-                    <li class="nav-item">
-                        <button class="btn btn-blue"><?php the_field('sign_up_button', 'options'); ?></button>
+                    <li class="nav-item nav-item-btn">
+                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button', 'options'); ?></button>
                     </li>
 				</ul>
 			</div>

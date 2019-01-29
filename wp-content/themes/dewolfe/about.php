@@ -35,8 +35,8 @@
             <div class="caption-scroll">
                 <h1><?php the_field('title_s1', $post_ID) ?></h1>
                 <?php the_field('text_s1', $post->ID); ?>
-                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
-                </div>
+                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+            </div>
            
             <ol class="carousel-indicators">
                 <?php if($n > 1): ?>
@@ -48,7 +48,19 @@
             </ol>
         </div>
     </div>
-    
+    <div class="caption-mobile">
+        <ol class="carousel-indicators mobile">
+            <?php if($n > 1): ?>
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <?php for ($i=1; $i < $n; $i++): ?> 
+                    <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
+                <?php endfor; ?>
+            <?php endif; ?>
+        </ol>
+        <h1><?php the_field('title_s1', $post_ID) ?></h1>
+        <?php the_field('text_s1', $post->ID); ?>
+        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+    </div>
 </section>
 <!-- End Top panel -->
 
@@ -78,8 +90,8 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-5 offset-md-1">
-                    <div class="image" data-aos="fade-up" data-aos-duration="1000" style="background-image: url('<?php echo $image; ?>');">
-                        <div class="box d-flex" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="image" data-aos="fade-up" data-aos-duration="500" style="background-image: url('<?php echo $image; ?>');">
+                        <div class="box d-flex" data-aos="fade-up" data-aos-duration="500">
                             <div>
                                 <h5 class="title-h5"><?php echo $title; ?></h5>
                                 <?php echo $sub_text; ?>
@@ -93,8 +105,8 @@
         <div class="right mb">
             <div class="row">
                 <div class="col-sm-12 col-md-5 offset-md-1">
-                    <div class="image" data-aos="fade-up" data-aos-duration="1000"  style="background-image: url('<?php echo $image; ?>');">
-                        <div class="box d-flex" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="image" data-aos="fade-up" data-aos-duration="500"  style="background-image: url('<?php echo $image; ?>');">
+                        <div class="box d-flex" data-aos="fade-up" data-aos-duration="500">
                             <div>
                                 <h5 class="title-h5"><?php echo $title; ?></h5>
                                 <?php echo $sub_text; ?>

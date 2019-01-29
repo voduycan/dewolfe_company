@@ -132,6 +132,23 @@ $(function() {
                 scrollTop: $(".our-client").offset().top
             }, 800);
         });
+        var flag_close = true;
+        $('#btn-toggle').click(function(){
+            if (flag_close) {
+                $('#btn-toggle img').addClass('d-none');
+                $('#btn-toggle .icon-cancel').removeClass('d-none');
+                flag_close = false;
+            }
+            else{
+                $('#btn-toggle img').removeClass('d-none');
+                $('#btn-toggle .icon-cancel').addClass('d-none');
+                flag_close = true;
+            }
+        });
+        $('.carousel-indicators.mobile li').click(function(){
+            $('.carousel-indicators.mobile li').removeClass('active');
+            $(this).addClass('active');
+        });
         var hashcode = window.location.hash;
         if(hashcode){
             $('html,body').animate({scrollTop: $('section'+hashcode).offset().top + 600}, 800);

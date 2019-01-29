@@ -177,20 +177,46 @@ header{
                 background: none;
                 outline: 0;
             }
+            .icon-cancel{
+                font-size: $size-p + 1;
+                color: $color-blue;
+            }
         }
         .navbar-collapse{
             text-transform: uppercase;
             justify-content: flex-end;
         }
         .navbar-nav{
+            @media all and (max-width: 991px){
+                margin-top: 20px;
+                .menu{
+                    .nav-link{
+                        padding: 0 0 0 15px !important;
+                        line-height: 1;
+                    }
+                    &.active{
+                        .nav-link{
+                            border-left: 1px solid $color-blue;
+                        }
+                    }
+                }
+            }
+
+            .nav-item-btn{
+                @media all and (max-width: 991px){
+                    border-top: 1px solid $bg-body;
+                    padding-top: 25px;
+                }
+            }
             .nav-item{
                 margin-right: 40px;
                 &:last-child{
                     margin-right: 0;
                 }
-                @media all and (max-width: 992px){
+                @media all and (max-width: 991px){
                     margin-right: 0;
-                    text-align: right;
+                    text-align: left;
+                    margin: 15px 0;
                 }
                 .nav-link{
                     position: relative;
@@ -212,8 +238,8 @@ header{
                     @media all and (max-width: 576px){
                         font-size: $size-p;
                     }
-                    @media all and (max-width: 992px){
-                        text-align: right;
+                    @media all and (max-width: 991px){
+                        text-align: left;
                         &::after{
                             display: none;
                         }
@@ -224,6 +250,9 @@ header{
                 }
                 button{
                     margin-top: 0;
+                    @media all and (max-width: 991px){
+
+                    }
                 }
                 &.active{
                     .nav-link{
@@ -341,6 +370,9 @@ footer{
             text-align: center;
             margin-bottom: 10px;
             justify-content: center;
+            .email{
+                margin-top: 15px;
+            }
         }
         .menu{
             margin-bottom: 10px;
@@ -349,6 +381,21 @@ footer{
             justify-content: center;
             ul{
                 text-align: center;
+            }
+        }
+    }
+    @media all and (max-width: 576px){
+        .social{
+            ul{
+               li{
+                    display: inline-block;
+                    margin: 0 10px;
+                    a{
+                        span{
+                            display: none;
+                        }
+                    }
+               }
             }
         }
     }
@@ -534,6 +581,12 @@ footer{
         padding-top: 30px;
         padding-bottom: 0;
     }
+    input[type=text]{
+        @include transition(all 0.2s ease-in-out);
+        &:focus{
+            border: 1px solid $color-blue;
+        }
+    }
     input[type="submit"]{
         padding: 10px 30px;
         text-transform: capitalize;
@@ -568,6 +621,9 @@ footer{
         @media all and (max-width: 992px){
             left: $padding-tablet;
         }
+        @media all and (max-width: 767px){
+            display: none;
+        }
         @media all and (max-width: 576px){
             left: $padding-mobile;
             width: calc(100% - 32px);
@@ -578,7 +634,7 @@ footer{
         ul{
             li{
                 margin-left: 1.3em;
-                font-size: $size-normal;
+                font-size: $size-p;
             }
         }
         p{
@@ -600,18 +656,10 @@ footer{
                 font-size: $size-h1 - 10;
                  margin-bottom: 10px;
             }
-            ul{
-                li{
-                    font-size: $size-normal - 2;
-                }
-            }
             p{
                 width: 90%;
                 margin-left: auto;
                 margin-right: auto;
-            }
-            button{
-                font-size: $size-normal - 2;
             }
         }
         .content{
@@ -639,6 +687,12 @@ footer{
         @include background-image;
         width: 100%;
         height: 486px;
+        @media all and (max-width: 767px){
+            height: 300px;
+        }
+         @media all and (max-width: 576px){
+            height: 200px;
+        }
     }
     .over-lay{
         position: absolute;
@@ -675,6 +729,53 @@ footer{
             &:last-child{
                 margin-right: 0;
             }
+        }
+    }
+
+    .caption-mobile{
+        position: relative;
+        text-align: center;
+        @media all and (min-width: 768px){
+            display: none;
+        }
+        padding: 50px $padding;
+        @media all and (max-width: 992px){
+            padding: $padding-tablet;
+        }
+        @media all and (max-width: 576px){
+            padding: 50px $padding-mobile;
+        }
+        ul{
+            li{
+                margin-left: 1.3em;
+                font-size: $size-p;
+            }
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        
+        h1{
+            margin-bottom: 20px;
+            padding: 0;
+            span:first-child{
+                text-transform: capitalize;
+            }
+        }
+        @media all and (max-width: 576px){
+            text-align: center;
+            h1{
+                font-size: $size-h1 - 10;
+                 margin-bottom: 10px;
+            }
+            
+        }
+        .carousel-indicators.mobile{
+            margin: 0;
+            position: absolute;
+            top: -20px;
+            bottom: unset;
+            justify-content: center;
         }
     }
 }
@@ -966,8 +1067,12 @@ footer{
         justify-content: center;
         align-items: center;
         height: 488px;
+         @media all and (max-width: 576px){
+            padding: 0 30px;
+         }
         .title-h5{
              font-size: $size-h5 - 3;
+             margin-bottom: 15px;
         }
         h2{
             font-size: $size-h2 + 6;
@@ -1021,6 +1126,7 @@ footer{
         height: 488px;
         @include background-image;
         position: relative;
+        opacity: 1 !important;
          @media all and (max-width: 576px){
             margin-bottom: 100px;
         }
@@ -1036,11 +1142,15 @@ footer{
             align-items: center;
             padding: 15px;
             background-color: $bg-section;
+            opacity: 1 !important;
             p{
                 margin-bottom: 0;
             }
             @media all and (max-width: 576px){
                 bottom: -100px;
+                width: 80%;
+                padding-left: 30px;
+                padding-right: 30px;
             }
         }
     }
@@ -1064,7 +1174,7 @@ footer{
     @media all and (max-width: 767px){
         .left{
             .text{
-                margin-bottom: 30px;
+                margin-bottom: 60px;
             }
         }
         .text{
@@ -1072,7 +1182,7 @@ footer{
         }
         .right{
             .text{
-                margin-bottom: 30px;
+                margin-bottom: 60px;
                 h2{
                    font-size: $size-h5 - 3;
                    font-weight: $bold;
@@ -1097,14 +1207,13 @@ footer{
         height: 404px;
         @include background-image;
     }
-    .d-flex{
-        justify-content: center;
-        align-items: center;
-    }
     .box{
         padding: 0 20px;
+         @media all and (max-width: 767px){
+            padding: 50px 0 0;
+        }
         h2{
-            margin-bottom: 15px;
+            margin-bottom: 30px;
         }
         h5{
             font-size: $size-h5;
@@ -1124,17 +1233,20 @@ footer{
         padding: 0;
     }
     .row{
-         @media all and (min-width: 577px){
+         @media all and (min-width: 768px){
             padding-bottom: 30px;
+        }
+         @media all and (max-width: 767px){
+            flex-direction: column-reverse;
         }
     }
     .p-right{
-        @media all and (min-width: 577px){
+        @media all and (min-width: 768px){
             padding-right: 0;
         }
     }
     .p-left{
-        @media all and (min-width: 577px){
+        @media all and (min-width: 768px){
             padding-left: 0;
         }
     }
@@ -1145,21 +1257,19 @@ footer{
         position: relative;
         background-color: $bg-white;
         padding-left: 50px;
-        padding-right: 15px;
+        padding-right: 50px;
         border-top: 3px solid $color-text-blue;
         @media all and (max-width: 1024px){
             height: 380px;
-            padding-left: 30px;
+            padding: 0 30px;
         }
         @media all and (max-width: 992px){
             height: 350px;
         }
-        @media all and (max-width: 576px){
+        @media all and (max-width: 767px){
             height: auto;
-            padding-left: 15px;
             .about{
-                margin-bottom: 20px;
-                padding-top: 20px;
+                margin: 50px 0;
             }
         }
         .bg-img{
@@ -1176,7 +1286,7 @@ footer{
             color: $bg-gray;
             h3{
                 font-weight: $extraLight;
-                margin-bottom: 0;
+                margin-bottom: 15px;
             }
             .work{
                 font-size: $size-p;
@@ -1200,9 +1310,6 @@ footer{
         }
         @media all and (max-width: 992px){
             height: 350px;
-        }
-        @media all and (max-width: 576px){
-            margin: 0 1px;
         }
     }
     @include arrow;

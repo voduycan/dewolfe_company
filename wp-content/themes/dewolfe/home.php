@@ -23,6 +23,7 @@
                 </div>
             <?php endwhile; ?>
             <div class="over-lay"></div>
+
         </div>
     <?php endif; ?>
    
@@ -32,7 +33,7 @@
             <div class="caption-scroll">
                 <h1><?php the_field('title_s1', $post_ID) ?></h1>
                 <?php the_field('text_s1', $post->ID); ?>
-                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
             </div>
            
             <ol class="carousel-indicators">
@@ -45,7 +46,19 @@
             </ol>
         </div>
     </div>
-    
+    <div class="caption-mobile">
+        <ol class="carousel-indicators mobile">
+            <?php if($n > 1): ?>
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <?php for ($i=1; $i < $n; $i++): ?> 
+                    <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
+                <?php endfor; ?>
+            <?php endif; ?>
+        </ol>
+        <h1><?php the_field('title_s1', $post_ID) ?></h1>
+        <?php the_field('text_s1', $post->ID); ?>
+        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+    </div>
 </section>
 <!-- End Top panel -->
 
@@ -63,7 +76,7 @@
                 // vars
                 $image = get_sub_field('image');
         ?>
-            <img  data-aos="fade-up" data-aos-duration="1000"  src="<?php echo $image; ?>" alt="">
+            <img  data-aos="fade-up" data-aos-duration="500"  src="<?php echo $image; ?>" alt="">
         <?php endwhile; endif; ?>
     <?php endwhile; endif; ?>
     
