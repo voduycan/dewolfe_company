@@ -81,9 +81,11 @@
 		                        </li>';
 		                }
 	             	?>
+                    <?php if(get_field('sign_up_button', 'options')): ?>
                     <li class="nav-item nav-item-btn">
                         <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button', 'options'); ?></button>
                     </li>
+                    <?php endif; ?>
 				</ul>
 			</div>
 		</nav>

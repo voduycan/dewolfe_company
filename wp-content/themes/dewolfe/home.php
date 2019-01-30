@@ -33,7 +33,9 @@
             <div class="caption-scroll">
                 <h1><?php the_field('title_s1', $post_ID) ?></h1>
                 <?php the_field('text_s1', $post->ID); ?>
-                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+                <?php if(get_field('sign_up_button_s1', $post_ID)): ?>
+                    <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+                <?php endif; ?>
             </div>
            
             <ol class="carousel-indicators">
@@ -57,7 +59,9 @@
         </ol>
         <h1><?php the_field('title_s1', $post_ID) ?></h1>
         <?php the_field('text_s1', $post->ID); ?>
-        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+        <?php if(get_field('sign_up_button_s1', $post_ID)): ?>
+            <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+        <?php endif; ?> 
     </div>
 </section>
 <!-- End Top panel -->
@@ -119,7 +123,9 @@
                            
                             <div class="mt-3">
                                 <h5><?php echo $comming; ?></h5>
-                                <button class="btn btn-blue"><?php echo $sign_up_buton; ?></button>
+                                <?php if($sign_up_buton): ?>
+                                    <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $sign_up_buton; ?></button>
+                                <?php endif; ?> 
                             </div>
                         </div>
                     </div>

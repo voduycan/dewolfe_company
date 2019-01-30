@@ -35,7 +35,9 @@
             <div class="caption-scroll">
                 <h1><?php the_field('title_s1', $post_ID) ?></h1>
                 <?php the_field('text_s1', $post->ID); ?>
-                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+                 <?php if(get_field('sign_up_button_s1', $post_ID)): ?>
+                    <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+                <?php endif; ?>
             </div>
            
             <ol class="carousel-indicators">
@@ -59,7 +61,9 @@
         </ol>
         <h1><?php the_field('title_s1', $post_ID) ?></h1>
         <?php the_field('text_s1', $post->ID); ?>
-        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+        <?php if(get_field('sign_up_button_s1', $post_ID)): ?>
+            <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+        <?php endif; ?>
     </div>
 </section>
 <!-- End Top panel -->
@@ -72,7 +76,6 @@
         $i = 0;
         while( have_rows('card_s2') ): the_row(); 
             // vars
-            $title = get_sub_field('title');
             $image = get_sub_field('image');
             $sub_text = get_sub_field('sub_text');
             $text = get_sub_field('text');
@@ -84,7 +87,6 @@
                 <div class="col-sm-12 col-md-4 offset-md-1">
                     <div class="text d-flex">
                         <div>
-                            <h5 class="title-h5"><?php echo $title; ?></h5>
                             <?php echo $text; ?>
                         </div>
                     </div>
@@ -93,7 +95,6 @@
                     <div class="image" data-aos="fade-up" data-aos-duration="500" style="background-image: url('<?php echo $image; ?>');">
                         <div class="box d-flex" data-aos="fade-up" data-aos-duration="500">
                             <div>
-                                <h5 class="title-h5"><?php echo $title; ?></h5>
                                 <?php echo $sub_text; ?>
                             </div>
                         </div>
@@ -108,7 +109,6 @@
                     <div class="image" data-aos="fade-up" data-aos-duration="500"  style="background-image: url('<?php echo $image; ?>');">
                         <div class="box d-flex" data-aos="fade-up" data-aos-duration="500">
                             <div>
-                                <h5 class="title-h5"><?php echo $title; ?></h5>
                                 <?php echo $sub_text; ?>
                             </div>
                         </div>
@@ -117,10 +117,7 @@
                 <div class="col-sm-12 col-md-4 offset-md-1">
                     <div class="text d-flex">
                        <div>
-                            <h2><?php echo $title; ?></h2>
-                            <div class="pd-left">
-                                <?php echo $text; ?>
-                            </div>
+                            <?php echo $text; ?>
                         </div>
                     </div>
                 </div>

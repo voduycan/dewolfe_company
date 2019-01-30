@@ -5,6 +5,14 @@ $(function() {
         autoplay: true,
         autoplaySpeed: 4000,
         dots: true,
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    dots: false,
+                }
+            }
+        ]
     });
     $('.team').slick({
         slidesToShow: 1,
@@ -12,6 +20,14 @@ $(function() {
         autoplay: true,
         autoplaySpeed: 4000,
         dots: true,
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    dots: false,
+                }
+            }
+        ]
     });
     $('.foundation').slick({
         slidesToShow: 4,
