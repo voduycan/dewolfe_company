@@ -1,19 +1,4 @@
 $(function() {
-    $('.autoplay').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        dots: true,
-        responsive: [
-            {
-                breakpoint: 576,
-                settings: {
-                    dots: false,
-                }
-            }
-        ]
-    });
     $('.team').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -61,10 +46,12 @@ $(function() {
     });
 
     //Scroll
-    $('.cap-scroll').jScrollPane();
-    $('.caption-scroll').jScrollPane();
-    $( window ).resize(function() {
+    $( window ).load(function(){
         $('.cap-scroll').jScrollPane();
+        $('.caption-scroll').jScrollPane();
+    });
+    $( window ).resize(function() {
+        $('#cap-scroll .cap-scroll').jScrollPane();
         $('.caption-scroll').jScrollPane();
     });
 
@@ -141,13 +128,20 @@ $(function() {
         $('.faq .card-body').wordBreakKeepAll();
         $('#exampleModal .modal-footer ul li').wordBreakKeepAll();
         $('.faq .btn-collapse').wordBreakKeepAll();
-        $('.cap-scroll').jScrollPane();
 
         $("#scroll-down").click(function() {
             $('html, body').animate({
                 scrollTop: $(".our-client").offset().top
             }, 800);
         });
+        
+        $('#carouselExampleIndicators2').bind('slide.bs.carousel', function (e) {
+            setTimeout(function(){ $('.cap-scroll').jScrollPane(); }, 300);
+        });
+        
+        $('#crs1').addClass('active');
+        $('#count0').addClass('active');
+
         var flag_close = true;
         $('#btn-toggle').click(function(){
             if (flag_close) {
@@ -161,10 +155,12 @@ $(function() {
                 flag_close = true;
             }
         });
+
         $('.carousel-indicators.mobile li').click(function(){
             $('.carousel-indicators.mobile li').removeClass('active');
             $(this).addClass('active');
         });
+
         var hashcode = window.location.hash;
         if(hashcode){
             $('html,body').animate({scrollTop: $('section'+hashcode).offset().top + 600}, 800);
@@ -191,6 +187,7 @@ $(function() {
         $('.trips .slick-next').append('<span class="icon-right-arrow"></span>');
         $('.btn-collapse').addClass('collapsed');
         $flag = false;
+
         $('.btn-collapse').click(function(){
             if($(this).children('.icon-btn').hasClass('icon-bottom')){
                 $(this).children('.icon-btn').removeClass('icon-bottom');

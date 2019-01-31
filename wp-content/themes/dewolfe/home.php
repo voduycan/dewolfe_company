@@ -49,14 +49,14 @@
         </div>
     </div>
     <div class="caption-mobile">
-        <ol class="carousel-indicators mobile">
+        <!-- <ol class="carousel-indicators mobile">
             <?php if($n > 1): ?>
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <?php for ($i=1; $i < $n; $i++): ?> 
                     <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
                 <?php endfor; ?>
             <?php endif; ?>
-        </ol>
+        </ol> -->
         <h1><?php the_field('title_s1', $post_ID) ?></h1>
         <?php the_field('text_s1', $post->ID); ?>
         <?php if(get_field('sign_up_button_s1', $post_ID)): ?>
@@ -90,54 +90,100 @@
 <!-- Our Products -->
 <section class="our-products">
     <h2><?php the_field('title_s3', $post_ID); ?></h2>
-    <div class="autoplay slider">
+    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
         <?php if( have_rows('products_s3') ): 
-        while( have_rows('products_s3') ): the_row(); 
-            // vars
-            $logo = get_sub_field('logo');
-            $image = get_sub_field('image');
-            $title = get_sub_field('title');
-            $sub_title = get_sub_field('sub_title');
-            $text = get_sub_field('text');
-            $sub_text = get_sub_field('sub_text');
-            $sign_up_buton = get_sub_field('sign_up_buton');
-            $comming = get_sub_field('comming');
-            $issuer_field = get_sub_field('issuer_field');
+                $count = -1;
         ?>
+            <ol class="carousel-indicators" id="ol-cap">
+                <?php
+                    while( have_rows('products_s3') ): the_row(); 
+                        // vars
+                        $count++;
+                    ?>
+                    <li id="count<?php echo($count); ?>" data-target="#carouselExampleIndicators2" data-slide-to="<?php echo($count); ?>"></li>
+                <?php endwhile; ?>
+            </ol>
+        <?php endif; ?>
 
-        <div>
-            <div class="row">
+        <div class="carousel-inner">
+            <?php if( have_rows('products_s3') ): 
+                $crs = 0;
+            while( have_rows('products_s3') ): the_row(); 
+                // vars
+                $logo = get_sub_field('logo');
+                $image = get_sub_field('image');
+                $title = get_sub_field('title');
+                $sub_title = get_sub_field('sub_title');
+                $text = get_sub_field('text');
+                $sub_text = get_sub_field('sub_text');
+                $sign_up_buton = get_sub_field('sign_up_buton');
+                $comming = get_sub_field('comming');
+                $issuer_field = get_sub_field('issuer_field');
+                $crs++;
+            ?>
+            <div class="carousel-item" id="crs<?php echo($crs);?>">
+              <div class="row">
 
-                <div class="col-sm-12 col-md-5 offset-md-1  d-flex">
-                    <img class="bg-product" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-product.png">
-                    <div class="cap  cap-scroll">
-                        <div class="top">
-                            <div class="logo" style="background-image: url('<?php echo $logo;?>');"></div>
-                            <div class="title">
-                                <h3><?php echo $title; ?></h3>
-                                <span><?php echo $sub_title; ?></span>
+                    <div class="col-sm-12 col-md-5 offset-md-1  d-flex" id="cap-scroll">
+                        <!-- <img class="bg-product" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-product.png"> -->
+                        <div class="cap  cap-scroll">
+                            <div class="top">
+                                <div class="logo" style="background-image: url('<?php echo $logo;?>');"></div>
+                                <div class="title">
+                                    <h3><?php echo $title; ?></h3>
+                                    <span><?php echo $sub_title; ?></span>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <?php echo $text; ?>
+                               
+                                <div class="mt-3">
+                                    <?php if($comming): ?>
+                                        <h5><?php echo $comming; ?></h5>
+                                    <?php endif; ?>
+                                    <?php if($sign_up_buton): ?>
+                                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $sign_up_buton; ?></button>
+                                    <?php endif; ?> 
+                                </div>
                             </div>
                         </div>
-                        <div class="bottom">
-                            <?php echo $text; ?>
-                           
-                            <div class="mt-3">
-                                <h5><?php echo $comming; ?></h5>
-                                <?php if($sign_up_buton): ?>
-                                    <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $sign_up_buton; ?></button>
-                                <?php endif; ?> 
+                        <div class="cap  cap-scroll-mobile">
+                            <div class="top">
+                                <div class="logo" style="background-image: url('<?php echo $logo;?>');"></div>
+                                <div class="title">
+                                    <h3><?php echo $title; ?></h3>
+                                    <span><?php echo $sub_title; ?></span>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <?php echo $text; ?>
+                               
+                                <div class="mt-3">
+                                    <?php if($comming): ?>
+                                        <h5><?php echo $comming; ?></h5>
+                                    <?php endif; ?>
+                                    <?php if($sign_up_buton): ?>
+                                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $sign_up_buton; ?></button>
+                                    <?php endif; ?> 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-5">
-                    <div class="img-right" style="background-image: url('<?php echo $image; ?>');"></div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="img-right" style="background-image: url('<?php echo $image; ?>');"></div>
+                    </div>
                 </div>
             </div>
+            <?php endwhile; endif; ?>
         </div>
-        <?php endwhile; endif; ?>
-        
-            
+        <a class="carousel-control-prev carousel-control" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next carousel-control" href="#carouselExampleIndicators2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </section>
 <!-- End Our Products -->

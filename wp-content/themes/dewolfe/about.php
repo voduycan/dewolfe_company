@@ -51,14 +51,14 @@
         </div>
     </div>
     <div class="caption-mobile">
-        <ol class="carousel-indicators mobile">
+        <!-- <ol class="carousel-indicators mobile">
             <?php if($n > 1): ?>
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <?php for ($i=1; $i < $n; $i++): ?> 
                     <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
                 <?php endfor; ?>
             <?php endif; ?>
-        </ol>
+        </ol> -->
         <h1><?php the_field('title_s1', $post_ID) ?></h1>
         <?php the_field('text_s1', $post->ID); ?>
         <?php if(get_field('sign_up_button_s1', $post_ID)): ?>
@@ -162,7 +162,7 @@
                 <div class="col-sm-12 col-md-5 offset-md-1 p-right">
                     <div class="d-flex">
                         <div class="about">
-                            <img class="bg-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-product.png">
+                            <!-- <img class="bg-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-product.png"> -->
                            <div class="mb-3">
                                 <h3><?php echo $name; ?></h3>
                                 <span class="work"><?php echo $work; ?></span>
