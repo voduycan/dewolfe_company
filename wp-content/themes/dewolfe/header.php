@@ -83,7 +83,7 @@
 	             	?>
                     <?php if(get_field('sign_up_button', 'options')): ?>
                     <li class="nav-item nav-item-btn">
-                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button', 'options'); ?></button>
+                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('sign_up_button', 'options'); ?></button>
                     </li>
                     <?php endif; ?>
 				</ul>
@@ -108,5 +108,28 @@
     </div>
   </div>
 </div> -->
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex"style="background-image: url('<?php the_field('bg_img_modal', 'options'); ?>');">
+        <div class="over-lay"></div>
+        <span class="icon-error" id="close-modal"></span>
+        <h3><?php the_field('title_modal', 'options'); ?></h3>
+      </div>
+      <div class="modal-body">
+        <?php the_field('form_modal', 'options'); ?>
+      </div>
+      <div class="modal-footer">
+       <?php the_field('text_modal', 'options'); ?>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $('#submit-btn').val('<?php the_field('sign_up_button', 'options'); ?>');
+    $('#close').append('<button type="button" id="close-btn" class="btn btn-blue"><?php the_field('close_button', 'options'); ?></button>');
+</script>
 
 	

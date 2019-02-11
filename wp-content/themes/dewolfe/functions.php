@@ -60,18 +60,18 @@ function my_acf_admin_head() {
 }
 add_action('acf/input/admin_head', 'my_acf_admin_head');
 
-add_action('admin_head', 'my_custom_fonts');
+// add_action('admin_head', 'my_custom_fonts');
 
-function my_custom_fonts() {
-  echo '<style>
-    #additional-settings-panel-tab{
-    		display: none !important;
-    	}
-    #form-panel-tab, #form-panel{
-    	display: none !important;
-    }
-  </style>';
-}
+// function my_custom_fonts() {
+//   echo '<style>
+//     #additional-settings-panel-tab{
+//     		display: none !important;
+//     	}
+//     #form-panel-tab, #form-panel{
+//     	display: none !important;
+//     }
+//   </style>';
+// }
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

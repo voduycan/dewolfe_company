@@ -34,7 +34,7 @@
                 <h1><?php the_field('title_s1', $post_ID) ?></h1>
                 <?php the_field('text_s1', $post->ID); ?>
                 <?php if(get_field('sign_up_button_s1', $post_ID)): ?>
-                    <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+                    <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
                 <?php endif; ?>
             </div>
            
@@ -60,7 +60,7 @@
         <h1><?php the_field('title_s1', $post_ID) ?></h1>
         <?php the_field('text_s1', $post->ID); ?>
         <?php if(get_field('sign_up_button_s1', $post_ID)): ?>
-            <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
+            <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('sign_up_button_s1', $post_ID) ?></button>
         <?php endif; ?> 
     </div>
 </section>
@@ -142,7 +142,7 @@
                                         <h5><?php echo $comming; ?></h5>
                                     <?php endif; ?>
                                     <?php if($sign_up_buton): ?>
-                                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $sign_up_buton; ?></button>
+                                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $sign_up_buton; ?></button>
                                     <?php endif; ?> 
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                                         <h5><?php echo $comming; ?></h5>
                                     <?php endif; ?>
                                     <?php if($sign_up_buton): ?>
-                                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $sign_up_buton; ?></button>
+                                        <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $sign_up_buton; ?></button>
                                     <?php endif; ?> 
                                 </div>
                             </div>

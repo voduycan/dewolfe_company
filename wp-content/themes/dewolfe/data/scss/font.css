@@ -126,8 +126,8 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?8gumx2");
-  src: url("../fonts/icomoon.eot?8gumx2#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?8gumx2") format("truetype"), url("../fonts/icomoon.woff?8gumx2") format("woff"), url("../fonts/icomoon.svg?8gumx2#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?gfrt2f");
+  src: url("../fonts/icomoon.eot?gfrt2f#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?gfrt2f") format("truetype"), url("../fonts/icomoon.woff?gfrt2f") format("woff"), url("../fonts/icomoon.svg?gfrt2f#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -164,5 +164,8 @@
 
 .icon-cross:before {
   content: "\ea0f"; }
+
+.icon-spinner:before {
+  content: "\e97c"; }
 
 /*# sourceMappingURL=font.css.map */
