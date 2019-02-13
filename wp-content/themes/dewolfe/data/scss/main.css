@@ -1200,13 +1200,19 @@ footer {
   left: -25px; }
 .our-products #carouselExampleIndicators2 .carousel-control-next {
   right: -25px; }
+@media all and (max-width: 767px) {
+  .our-products .carousel-item {
+    padding: 5px; } }
 .our-products .row {
   margin-left: 0;
   margin-right: 0;
   padding-bottom: 15px; }
   @media all and (max-width: 767px) {
     .our-products .row {
-      flex-direction: column-reverse; } }
+      flex-direction: column-reverse;
+      box-shadow: 0px 0px 5px 2px #e5e5e5;
+      padding: 0;
+      margin-bottom: 15px; } }
   .our-products .row .col-sm-12 {
     padding: 0; }
   .our-products .row .d-flex {
@@ -1326,6 +1332,34 @@ footer {
     font-weight: 200;
     text-align: center;
     margin-bottom: 40px; }
+  @media all and (max-width: 575px) {
+    .press .foundation {
+      display: none; } }
+  @media all and (min-width: 576px) {
+    .press #carouselExampleIndicators3 {
+      display: none; } }
+  .press .carousel-control {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #3164CA;
+    background-size: 12px auto;
+    opacity: 1;
+    top: 150px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .press .carousel-control:hover {
+      background-color: #0D2645; }
+    .press .carousel-control .carousel-control-next-icon {
+      width: 12px;
+      height: 12px; }
+    .press .carousel-control .carousel-control-prev-icon {
+      width: 12px;
+      height: 12px; }
+  .press .carousel-control-prev {
+    left: -25px; }
+  .press .carousel-control-next {
+    right: -25px; }
   .press .card {
     border: 0;
     padding: 0;
@@ -1346,9 +1380,22 @@ footer {
           width: 75%;
           max-width: 200px;
           height: auto; }
+      .press .card .content .card-body-desk {
+        height: 160px;
+        width: 100% !important; }
+        @media all and (max-width: 575px) {
+          .press .card .content .card-body-desk {
+            display: none; } }
+      @media all and (min-width: 576px) {
+        .press .card .content .card-body-mobile {
+          display: none; } }
       .press .card .content .card-body {
+        padding: 30px 15px;
         position: relative;
         background-color: #fff; }
+        @media all and (max-width: 575px) {
+          .press .card .content .card-body {
+            padding: 30px; } }
         .press .card .content .card-body::before {
           content: "";
           position: absolute;
@@ -1363,7 +1410,8 @@ footer {
           text-align: center;
           font-weight: 700;
           color: #3164CA;
-          font-size: 15px; }
+          font-size: 15px;
+          margin-bottom: 15px; }
         .press .card .content .card-body p {
           margin-bottom: 0;
           text-align: center; }
@@ -1371,6 +1419,10 @@ footer {
           margin-bottom: 0; }
           .press .card .content .card-body ul li {
             font-size: 13px; }
+    @media all and (max-width: 767px) {
+      .press .card .content {
+        box-shadow: 0px 0px 5px 2px #e5e5e5;
+        border-top: 4px solid #3164CA; } }
     .press .card:hover .content {
       box-shadow: 0px 0px 5px 2px #e5e5e5;
       border-top: 4px solid #3164CA; }
@@ -1396,6 +1448,23 @@ footer {
   .press .slick-dots li.slick-active button::before {
     background: #3164CA;
     opacity: 1; }
+  @media all and (max-width: 575px) {
+    .press .slick-arrow {
+      display: block !important;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: #3164CA;
+      background-size: 12px auto;
+      opacity: 1;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .press .slick-arrow:hover {
+        background-color: #0D2645; }
+    .press .slick-prev {
+      left: -25px; }
+    .press .slick-next {
+      right: -25px; } }
 
 .why-choose-us {
   background-color: #F8F8F8; }
@@ -1568,12 +1637,21 @@ footer {
     text-align: center;
     padding: 0;
     margin-bottom: 40px; }
+  @media all and (max-width: 767px) {
+    .our-team .slick-slide {
+      padding: 5px; } }
   @media all and (min-width: 768px) {
     .our-team .row {
       padding-bottom: 30px; } }
   @media all and (max-width: 767px) {
     .our-team .row {
-      flex-direction: column-reverse; } }
+      flex-direction: column-reverse;
+      box-shadow: 0px 0px 5px 2px #e5e5e5;
+      margin: 0; }
+      .our-team .row .p-right {
+        padding: 0; }
+      .our-team .row .p-left {
+        padding: 0; } }
   @media all and (min-width: 768px) {
     .our-team .p-right {
       padding-right: 0; } }

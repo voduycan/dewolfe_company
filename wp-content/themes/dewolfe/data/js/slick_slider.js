@@ -40,6 +40,7 @@ $(function() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    dots: false,
                 }
             }
         ]
@@ -49,10 +50,13 @@ $(function() {
     $( window ).load(function(){
         $('.cap-scroll').jScrollPane();
         $('.caption-scroll').jScrollPane();
+        $('#press-cards .card-body-desk').jScrollPane({ autoReinitialise: true });
     });
     $( window ).resize(function() {
         $('#cap-scroll .cap-scroll').jScrollPane();
         $('.caption-scroll').jScrollPane();
+        $('#press-cards .card-body-desk').jScrollPane({ autoReinitialise: true });
+        $('#press-cards .card-body-desk').data('jsp').reinitialise();
     });
 
     var prevScrollpos = window.pageYOffset;
@@ -170,8 +174,12 @@ $(function() {
             setTimeout(function(){ $('.cap-scroll').jScrollPane(); }, 300);
         });
         
+        
+
         $('#crs1').addClass('active');
         $('#count0').addClass('active');
+        
+        $('#press-slide-0').addClass('active');
 
         var flag_close = true;
         $('#btn-toggle').click(function(){

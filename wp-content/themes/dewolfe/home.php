@@ -191,14 +191,14 @@
 <!-- Press -->
 <section class="press">
     <h2><?php the_field('title_s4', $post_ID); ?></h2>
-    <div class="foundation slider">
+    <div class="foundation slider" id="press-cards">
         <?php if( have_rows('press_s4_2') ):
         while( have_rows('press_s4_2') ): the_row(); 
             //vars
             $image = get_sub_field('image');
             $title = get_sub_field('title');
             $text = get_sub_field('text');
-             $time = 1;
+            $time = 1;
         ?>
         <div>
             <div class="card">
@@ -207,14 +207,60 @@
                         <img src="<?php echo $image; ?>">
                     </div>
                     <div class="card-body">
-                        <h5><?php echo $title; ?></h5>
-                        <?php echo $text; ?>
+                        <div class="card-body-desk">
+                            <h5><?php echo $title; ?></h5>
+                            <?php echo $text; ?>
+                        </div>
+                        <div class="card-body-mobile">
+                            <h5><?php echo $title; ?></h5>
+                            <?php echo $text; ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <?php endwhile; endif; ?>
     </div>
+
+    <?php if( have_rows('press_s4_2') ): ?>
+        <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+             <?php
+                $press_slide = -1;
+                while( have_rows('press_s4_2') ): the_row(); 
+                    //vars
+                    $image = get_sub_field('image');
+                    $title = get_sub_field('title');
+                    $text = get_sub_field('text');
+                    $press_slide++;
+            ?>
+                
+                <div class="carousel-item" id="press-slide-<?php echo $press_slide; ?>">
+                    <div class="card">
+                        <div class="content">
+                            <div class="card-img-top d-flex">
+                                <img src="<?php echo $image; ?>">
+                            </div>
+                            <div class="card-body">
+                                <h5><?php echo $title; ?></h5>
+                                <?php echo $text; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <?php endwhile;?>
+            </div>
+            <a class="carousel-control-prev carousel-control" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next carousel-control" href="#carouselExampleIndicators3" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    <?php endif; ?>
 </section>
 <!-- End Press -->
 
